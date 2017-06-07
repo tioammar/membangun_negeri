@@ -1,0 +1,168 @@
+table.table-revenue {
+  font-size: 12px;
+}
+
+table.table-revenue td {
+  padding: 0;
+}
+
+p.revenue-main {
+  font-size: 40px;
+}
+
+.ct-series-a .ct-area, .ct-series-a .ct-slice-pie {
+  fill: red;
+}
+
+.ct-series-b .ct-area, .ct-series-b .ct-slice-pie {
+  fill: green;
+}
+
+.ct-series-b .ct-area, .ct-series-b .ct-slice-pie {
+  fill: green;
+}
+
+.ct-series-c .ct-area, .ct-series-c .ct-slice-pie {
+  fill: blue;
+}
+
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: red;
+  /* Control the thikness of your lines */
+  stroke-width: 3px;
+}
+
+/* This selector overrides the points style on line charts. Points on line charts are actually just very short strokes. This allows you to customize even the point size in CSS */
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: red;
+  /* Size of your points */
+  stroke-width: 5px;
+}
+
+.ct-series-b .ct-line {
+  /* Set the colour of this series line */
+  stroke: green;
+  /* Control the thikness of your lines */
+  stroke-width: 3px;
+}
+
+/* This selector overrides the points style on line charts. Points on line charts are actually just very short strokes. This allows you to customize even the point size in CSS */
+.ct-series-b .ct-point {
+  /* Colour of your points */
+  stroke: green;
+  /* Size of your points */
+  stroke-width: 5px;
+}
+
+.ct-series-c .ct-line {
+  /* Set the colour of this series line */
+  stroke: blue;
+  /* Control the thikness of your lines */
+  stroke-width: 3px;
+}
+
+/* This selector overrides the points style on line charts. Points on line charts are actually just very short strokes. This allows you to customize even the point size in CSS */
+.ct-series-c .ct-point {
+  /* Colour of your points */
+  stroke: blue;
+  /* Size of your points */
+  stroke-width: 5px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.contain {
+  padding: 10px;
+}
+
+.sm-dashboard {
+  width: 32px;
+  height: 32px;
+}
+
+.small-modal {
+  width: 450px;
+}
+
+.indent-1 {
+  text-indent: 10px;
+}
+
+.indent-2 {
+  text-indent: 15px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.indent-3 {
+  text-indent: 20px;
+}
+
+.indent-4 {
+  text-indent: 25px;
+}
+
+.scrolled {
+  overflow-y: scroll;
+  height: 450px;
+}
+
+.big-text {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.login {
+  padding: 30px 30px 50px 30px;
+  width: 40%;
+  margin: 35px auto;
+}
+
+.card-action {
+  border: none;
+}
+
+.italic {
+  font-style: italic;
+  font-size: 15pt;
+}
+
+#modal-delete {
+  width: 450px;
+}
+
+.km {
+  font-size: 14px;
+}
+
+.login-logo {
+  height: 70px;
+}
+
+.profile {
+  margin: 15px;
+  height: 35px;
+  display: inline-block;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.error {
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+#upload-modal {
+  width: 450px;
+}
