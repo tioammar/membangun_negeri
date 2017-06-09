@@ -21,6 +21,12 @@ $('.modal-trigger-reject').on('click', function() {
   $('#modal-reject-'+id+'-'+tw).modal('open');
 });
 
+$('.modal-trigger-nr').on('click', function() {
+  var id = $(this).attr('data-id');
+  var tw = $(this).attr('data-count');
+  $('#modal-nr-'+id+'-'+tw).modal('open');
+});
+
 function showSelected(selected) {
   var classes = parseInt(selected);
 	$('tr td.'+classes).each(function(){

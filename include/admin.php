@@ -60,6 +60,7 @@ foreach($codes as $program){ // program is the code (e.g P1)
       </div>
       <div class='col s3 row'>
         <div class='col s12 grey lighten-3 center-align'>
+          <small>TREG7 Ytd </small>
           <h3>$progress_all_ytd %</h3>
         </div>";
 ?>

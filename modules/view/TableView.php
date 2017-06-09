@@ -58,7 +58,7 @@ class TableView {
           $editor = "<a class='$released_stt btn-floating btn-small green' href='data.php?".$this->view->statusType."&stt=".STATUS_RELEASED."&id=$model->id&t=$t'>
                       <i class='small material-icons'>done</i>
                     </a> 
-                    <a class='$notreleased_stt btn-floating btn-small red darken-3' href='data.php?".$this->view->statusType."&stt=".STATUS_NOT_RELEASED."&id=$model->id&t=$t'>
+                    <a class='$notreleased_stt btn-floating modal-trigger-nr btn-small red darken-3' data-id='$model->id' data-count='$t'>
                       <i class='small material-icons'>close</i>
                     </a>";
           break;
@@ -66,7 +66,7 @@ class TableView {
       echo $editor;
     }
   }
-
+  
   public function row($model){
     echo "
           <tr class='$this->class'>
@@ -90,8 +90,11 @@ class TableView {
         if($this->view->user == ADMIN_UNIT){
           $this->editor($model->id, $t);
         }
-        if($this->view->user == ADMIN_ALL || $this->view->user == ADMIN_SM){
+        if($this->view->user == ADMIN_SM){
           $this->rejEditor($model->id, $t);
+        }
+        if($this->view->user == ADMIN_ALL){
+          $this->nrEditor($model->id, $t);
         }
 
         if($model->ytd[$t] != 0){

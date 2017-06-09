@@ -1,5 +1,9 @@
 <!doctype html>
 <?php
+  require_once("modules/config.php");
+  require_once("modules/model/Notification.php");
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
   session_start();
   $session = $_SESSION;
 
@@ -32,7 +36,7 @@
 </head>
 <header>
   <?php
-  if($page != "login"){
+  if($page != "notifications" && $page != "login"){
     echo "<nav class='nav-extended'>";
   } else {
     echo "<nav>";
@@ -95,6 +99,12 @@
       echo "
     <li><a class='subheader'>PIC</a></li>
     <li><a href='$linkkm'>Membangun Negeri</a></li>";
+
+    $notifikasi = new Notification($session['unit'], "program");
+    $ids = $notifikasi->getAll($session['level']);
+    $count = count($ids);
+      echo "
+    <li><a href='?page=notifications'><span class='new badge' data-badge-caption=''>$count</span>Notifikasi</a></li>";
     }
     echo "
     <li><div class='divider'></div></li>

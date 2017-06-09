@@ -3,11 +3,12 @@ require_once(__DIR__."/../config.php");
 
 class Event {
 
-  public $message;
-  public $subject; // editor
+  public $event;
+  public $subj; // editor
   public $dest;
   public $unit;
   public $level; // current user level
+  public $message;
   protected $mysqli;
   protected $table;
   protected $type; // KM / Quad / Flag
@@ -24,7 +25,7 @@ class Event {
     if($r = $row->fetch_array()){
       $this->event = $r['event'];
       $this->unit = $r['unit'];
-      $this->subject = $r['subject'];
+      $this->subj = $r['subj'];
       if($this->table == "notification"){
         $this->message = $r['message'];
       }
@@ -36,8 +37,9 @@ class Event {
     $ids = array();
     $Q = "SELECT id FROM $this->table WHERE `unit` = '$this->unit' AND `dest` = '$level' AND `type` = '$this->type'"; 
     $row = $this->mysqli->query($Q);
+    $i = 0;
     while($r = $row->fetch_array()){
-      $ids[] = $r['id'];
+      $ids[$i] = $r['id'];
     }
     return $ids;
   }

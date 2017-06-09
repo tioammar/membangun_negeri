@@ -4,6 +4,7 @@ require_once("modules/config.php");
 require_once("modules/Upload.php");
 require_once("modules/Login.php");
 require_once("modules/ExcelProgram.php");
+require_once("modules/model/Notification.php");
 
 session_start();
 
@@ -20,7 +21,11 @@ if(isset($_GET['id']) && isset($_GET['t'])){
     $page = $_SESSION['level'] == ADMIN_ALL ? "adminall" : "admin";
     $process = new Process($id, $t, "program", $_SESSION['unit']);
     $status = $_GET['stt'];
-    $message = $status != STATUS_REJECTED ? "" : $_POST['message'];
+    
+    if($status != STATUS_REJECTED || $status != STATUS_NOT_RELEASED){
+      $message = $_POST['message'];
+    } else $message = "";
+
     if($process->updateStatus($status, $message) == QUERY_SUCCESS){
       header("Location: ./?page=$page");
     } else echo "Update Status Failed";
@@ -44,6 +49,14 @@ if(isset($_GET['id']) && isset($_GET['t'])){
       } else echo "Update Failed";
     }
   }
+}
+
+if(isset($_GET['deletenotif'])){
+  $id = $_GET['id'];
+  $notification = new Notification(null, null);
+  if($notification->delete($id)){
+    header("Location: ./?page=notifications");
+  } else echo "Delete Failed";
 }
 
   if(isset($_GET['uploadprog'])){

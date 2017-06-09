@@ -35,7 +35,11 @@ class Hitung {
       $b = 1;
       $ytd = 0;
       while($b <= $i){
-        $ytd = $model->realisasi[$b] + $ytd;
+        if($model->status[$b] == "released"){
+          $ytd = $model->realisasi[$b] + $ytd;
+        } else {
+          $ytd = 0 + $ytd;
+        }
         $b++;
       }
       $array[$i] = $ytd;
